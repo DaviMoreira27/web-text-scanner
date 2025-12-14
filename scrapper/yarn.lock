@@ -3,9 +3,9 @@
 
 
 "@hono/node-server@^1.19.6":
-  version "1.19.6"
-  resolved "https://registry.yarnpkg.com/@hono/node-server/-/node-server-1.19.6.tgz#44ec78607f37d3deb9476937049c721c7dc79390"
-  integrity sha512-Shz/KjlIeAhfiuE93NDKVdZ7HdBVLQAfdbaXEaoAVO3ic9ibRSLGIQGkcBbFyuLr+7/1D5ZCINM8B+6IvXeMtw==
+  version "1.19.7"
+  resolved "https://registry.yarnpkg.com/@hono/node-server/-/node-server-1.19.7.tgz#ecb2d3a7af40d1d378e53ce1fc1219f199fbcd6f"
+  integrity sha512-vUcD0uauS7EU2caukW8z5lJKtoGMokxNbJtBiwHgpqxEXokaHCBkQUmCHhjFB1VUTWdqj25QoMkMKzgjq+uhrw==
 
 "@playwright/test@^1.57.0":
   version "1.57.0"
@@ -15,9 +15,9 @@
     playwright "1.57.0"
 
 "@types/node@^24.10.1":
-  version "24.10.1"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-24.10.1.tgz#91e92182c93db8bd6224fca031e2370cef9a8f01"
-  integrity sha512-GNWcUTRBgIRJD5zj+Tq0fKOJ5XZajIiBroOF0yvj2bSU1WvNdYS/dn9UxwsujGW4JX06dnHyjV2y9rRaybH0iQ==
+  version "24.10.4"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-24.10.4.tgz#9d27c032a1b2c42a4eab8fb65c5856a8b8e098c4"
+  integrity sha512-vnDVpYPMzs4wunl27jHrfmwojOGKya0xyM3sH+UE5iv5uPS6vX7UIoh6m+vQc5LGBq52HBKPIn/zcSZVzeDEZg==
   dependencies:
     undici-types "~7.16.0"
 
@@ -27,9 +27,9 @@ fsevents@2.3.2:
   integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
 
 hono@^4.10.7:
-  version "4.10.7"
-  resolved "https://registry.yarnpkg.com/hono/-/hono-4.10.7.tgz#b72d1c7bb3f10a2afcf8a234fe9638a0c556c7a9"
-  integrity sha512-icXIITfw/07Q88nLSkB9aiUrd8rYzSweK681Kjo/TSggaGbOX4RRyxxm71v+3PC8C/j+4rlxGeoTRxQDkaJkUw==
+  version "4.11.1"
+  resolved "https://registry.yarnpkg.com/hono/-/hono-4.11.1.tgz#cb1b0c045fc74a96c693927234c95a45fb46ab0b"
+  integrity sha512-KsFcH0xxHes0J4zaQgWbYwmz3UPOOskdqZmItstUG93+Wk1ePBLkLGwbP9zlmh1BFUiL8Qp+Xfu9P7feJWpGNg==
 
 playwright-core@1.57.0:
   version "1.57.0"

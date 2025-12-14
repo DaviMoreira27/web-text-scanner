@@ -2,14 +2,12 @@
   "type": "module",
   "dependencies": {
     "@hono/node-server": "^1.19.6",
-    "hono": "^4.10.7",
-    "playwright": "^1.57.0"
+    "hono": "^4.10.7"
   },
   "devDependencies": {
-    "@playwright/test": "^1.57.0",
     "@types/node": "^24.10.1"
   },
   "scripts": {
-    "start": "node --watch index.ts"
+    "start": "node --watch src/index.ts"
   }
 }
