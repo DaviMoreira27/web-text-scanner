@@ -5,6 +5,8 @@
      "module": "nodenext",
      "rewriteRelativeImportExtensions": false,
      "erasableSyntaxOnly": true,
-     "verbatimModuleSyntax": true
+     "verbatimModuleSyntax": true,
+     "allowImportingTsExtensions": true,
+     "types": ["@types/node"]
   }
 }
