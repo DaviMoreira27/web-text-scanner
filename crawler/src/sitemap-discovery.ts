@@ -44,6 +44,49 @@ export async function getSiteMap(url: URL) {
   throw new Error("Sitemap not found!");
 }
 
+export async function crawlSitemaps(
+  initialUrls: string[],
+  visited: Set<string> = new Set(),
+): Promise<string[]> {
+  const results = new Set<string>();
+
+  for (const url of initialUrls) {
+    if (visited.has(url)) continue;
+    visited.add(url);
+
+    // se não for XML, adiciona e continua
+    if (!url.endsWith(".xml")) {
+      results.add(url);
+      continue;
+    }
+
+    try {
+      const res = await fetch(url);
+      if (!res.ok) continue;
+
+      const xml = await res.text();
+
+      const locUrls = extractUrlsFromSitemap(xml);
+
+      // adiciona todas localmente
+      for (const u of locUrls) results.add(u);
+
+      // busca recursivamente para os que forem xml
+      const childSitemaps = locUrls.filter((u) => u.endsWith(".xml"));
+
+      if (childSitemaps.length > 0) {
+        const nested = await crawlSitemaps(childSitemaps, visited);
+        for (const n of nested) results.add(n);
+      }
+    } catch (error) {
+      const message = error instanceof Error ? error.message : "Unknown error";
+      console.warn("Fetch failed", message);
+    }
+  }
+
+  return Array.from(results);
+}
+
 export function extractUrlsFromSitemap(xmlString: string) {
   if (!xmlString || typeof xmlString !== "string") return [];
 
@@ -86,47 +129,4 @@ export function extractUrlsFromSitemap(xmlString: string) {
   }
 
   return Array.from(new Set(urls));
-}
-
-export async function crawlSitemaps(
-  initialUrls: string[],
-  visited: Set<string> = new Set(),
-): Promise<string[]> {
-  const results = new Set<string>();
-
-  for (const url of initialUrls) {
-    if (visited.has(url)) continue;
-    visited.add(url);
-
-    // se não for XML, adiciona e continua
-    if (!url.endsWith(".xml")) {
-      results.add(url);
-      continue;
-    }
-
-    try {
-      const res = await fetch(url);
-      if (!res.ok) continue;
-
-      const xml = await res.text();
-
-      const locUrls = extractUrlsFromSitemap(xml);
-
-      // adiciona todas localmente
-      for (const u of locUrls) results.add(u);
-
-      // busca recursivamente para os que forem xml
-      const childSitemaps = locUrls.filter((u) => u.endsWith(".xml"));
-
-      if (childSitemaps.length > 0) {
-        const nested = await crawlSitemaps(childSitemaps, visited);
-        for (const n of nested) results.add(n);
-      }
-    } catch (error) {
-      const message = error instanceof Error ? error.message : "Unknown error";
-      console.warn("Fetch failed", message);
-    }
-  }
-
-  return Array.from(results);
 }
