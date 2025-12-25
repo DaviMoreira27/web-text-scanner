@@ -1,12 +1,14 @@
 {
   "compilerOptions": {
-     "noEmit": true,
-     "target": "esnext",
-     "module": "nodenext",
-     "rewriteRelativeImportExtensions": false,
-     "erasableSyntaxOnly": true,
-     "verbatimModuleSyntax": true,
-     "allowImportingTsExtensions": true,
-     "types": ["@types/node"]
-  }
+    "noEmit": true,
+    "target": "ES2022",
+    "module": "CommonJS",
+    "rewriteRelativeImportExtensions": false,
+    "erasableSyntaxOnly": true,
+    "verbatimModuleSyntax": true,
+    "allowImportingTsExtensions": true,
+    "types": ["@types/node"],
+    "outDir": "/dist",
+  },
+  "exclude": ["./src/tests/*"],
 }

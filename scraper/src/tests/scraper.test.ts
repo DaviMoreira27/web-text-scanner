@@ -16,6 +16,6 @@ describe("Page access", () => {
     array.fill(Math.random().toString());
     const buffer = Buffer.alloc(10 * 1024); // 10 Kb
 
-    assert.strictEqual(buffer, scraperService.calculateBufferSize(buffer));
+    assert.strictEqual(buffer.length, scraperService.calculateBufferSize(buffer));
   });
 });
