@@ -69,6 +69,7 @@ describe("scrapePage", () => {
       },
     };
 
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
     Object.defineProperty(browserApi.chromium, "launch", {
       value: async () => browserMock as Browser,
     });
