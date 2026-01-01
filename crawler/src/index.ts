@@ -5,6 +5,7 @@ import {
   extractUrlsFromSitemap,
   getSiteMap,
 } from "./sitemap-discovery.ts";
+import { producer } from "./queue/queue.config.ts";
 
 const app = new Hono();
 
@@ -14,8 +15,17 @@ app.get("/urls", async (c) => {
   const getSitemapUrls = extractUrlsFromSitemap(sitemapString);
 
   const allUrls = await crawlSitemaps(getSitemapUrls);
+
+  // await producer.connect();
+  // await producer.send({
+  //   topic: "website-scraper",
+  //   messages: allUrls.map((item) => ({
+  //     value: item,
+  //   })),
+  // });
+
   return c.json({
-    urls: allUrls,
+    urls: allUrls.length,
   });
 });
 

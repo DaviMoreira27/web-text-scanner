@@ -1,0 +1,1 @@
+- Apache Kafka basic glossary: https://kafka.js.org/docs/introduction

@@ -6,10 +6,12 @@
   "dependencies": {
     "@hono/node-server": "^1.19.6",
     "hono": "^4.10.7",
+    "kafkajs": "^2.2.4",
     "playwright": "^1.57.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.57.0",
+    "@types/kafkajs": "^1.8.2",
     "@types/node": "^25.0.2"
   },
   "scripts": {

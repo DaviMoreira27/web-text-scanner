@@ -2,7 +2,9 @@
   "type": "module",
   "dependencies": {
     "@hono/node-server": "^1.19.6",
-    "hono": "^4.10.7"
+    "@types/kafkajs": "^1.8.2",
+    "hono": "^4.10.7",
+    "kafkajs": "^2.2.4"
   },
   "devDependencies": {
     "@types/node": "^24.10.1"
