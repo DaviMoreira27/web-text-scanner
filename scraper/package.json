@@ -4,6 +4,7 @@
     "node": ">=22.0.0"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.962.0",
     "@hono/node-server": "^1.19.6",
     "hono": "^4.10.7",
     "kafkajs": "^2.2.4",
@@ -15,7 +16,7 @@
     "@types/node": "^25.0.2"
   },
   "scripts": {
-    "start": "node --watch src/index.ts",
+    "start": "node --env-file=.env --watch src/index.ts",
     "test:unit": "node --test ./tests/unit/**/*.unit.*",
     "test:integration": "node --test ./tests/integration/**/*.integration.*",
     "build": "tsc ./src/*"

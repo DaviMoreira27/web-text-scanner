@@ -16,13 +16,13 @@ app.get("/urls", async (c) => {
 
   const allUrls = await crawlSitemaps(getSitemapUrls);
 
-  // await producer.connect();
-  // await producer.send({
-  //   topic: "website-scraper",
-  //   messages: allUrls.map((item) => ({
-  //     value: item,
-  //   })),
-  // });
+  await producer.connect();
+  await producer.send({
+    topic: "website-scraper",
+    messages: allUrls.map((item) => ({
+      value: item,
+    })),
+  });
 
   return c.json({
     urls: allUrls.length,

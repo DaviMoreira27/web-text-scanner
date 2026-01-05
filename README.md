@@ -1,1 +1,2 @@
 - Apache Kafka basic glossary: https://kafka.js.org/docs/introduction
+- Call crawler endpoint: `curl http://localhost:3000/urls`

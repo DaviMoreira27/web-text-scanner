@@ -1,6 +1,7 @@
 import { writeFile } from "fs/promises";
 import { consumer } from "./queue/queue.config.ts";
 import { scrapePage } from "./scraper/scraper.service.ts";
+import { uploadScrapedImage } from "./storage/storage.service.ts";
 
 console.log(`Hello World`);
 
@@ -18,7 +19,10 @@ const run = async () => {
 
       const buffer = await scrapePage(message.value.toString());
 
-      await writeFile(`./images/image-${message.offset}.png`, buffer);
+      await uploadScrapedImage(
+        buffer,
+        `01KE5SCNNKR8EKSGMDD9H12KHH/website/images/${message.offset}.png`,
+      );
     },
   });
 };
